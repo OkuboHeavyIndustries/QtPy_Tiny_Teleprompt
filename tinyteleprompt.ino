@@ -18,7 +18,7 @@ void curser();
 int r;
 int p;
 
-const char MeatString[] PROGMEM = {"\"They're made out of \n\meat.\"\n\
+const char MeatString[] PROGMEM = {"\f\"They're made out of \n\meat.\"\n\
 \n\
   \"Meat\?\"\n\
 \n\
@@ -26,7 +26,7 @@ const char MeatString[] PROGMEM = {"\"They're made out of \n\meat.\"\n\
 \n\
   \"Meat\?\"\n\
 \n\
-\"There's no doubt about it. We picked several from different parts of the planet, took them aboard our recon \n\ vessels, probed them\n\ all the way through. \n\They're completely\n\ meat.\"\n\
+\"There's no doubt about it. We picked up\n\ several from different parts of the planet,\n\ took them aboard our\n\ recon vessels, probed them all the way\n\ through. They're\n\ completely meat.\"\n\
 \n\
   \"That's impossible.\n\ What about the radio\n\ signals\? The messages to the stars.\"\n\
 \n\
@@ -131,7 +131,7 @@ void setup(void) {
 
 void loop(void) {
   
-  for (int text=0;text<4690;text++) {
+  for (int text=0;text<4700;text++) {
     int progressbar = (text/78);
     delay(25);
    u8g2log.print(MeatString[text]);
@@ -148,7 +148,6 @@ void loop(void) {
     u8g2.drawStr(4, 61, "TERRY BISSON");
     u8g2.drawFrame(64,57,60,4);
     u8g2.drawBox(64,58, progressbar ,2);
-    
     u8g2.setFont(u8g2_font_tinytim_tf);
     u8g2.drawLog(3, 15, u8g2log);   // draw the terminal window on the display
     
